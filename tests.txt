@@ -1,0 +1,33 @@
+
+// Testing json_out
+    Json k;
+    k.add_number("nice", 69); //l.add_number("nice", 5);
+    k.add_number("hi", 27.2);
+    k.add_bool("check", true);
+    k.add_line("name", "roman");
+
+    Json l; l.add_line("town", "Buzuluk"); l.add_line("district", "Pobedi");
+    k.add("wear", l);
+    J_array ar;
+    ar.push_back(3); ar.push_back(4); ar.push_back(3);
+    l.add("places", ar);
+    ar.push_back("lmao"); ar.push_back_bool(true);
+    l.add("more places", ar);
+    k.add("addres", l);
+    cout << k << endl;
+    
+// Testing J_array_out
+	
+    J_array k;
+    k.push_back(5); k.push_back("lmao"); k.push_back_bool(true);
+
+    Json l; l.add_line("town", "Buzuluk"); l.add_line("district", "Pobedi");
+    k.push_back(l);
+
+    Json r; r.add("nice", 69); r.add("lol", "59");
+    k.push_back(l);
+
+    J_array new_a;
+    new_a.push_back(3); new_a.push_back(4); new_a.push_back(5);
+    k.push_back(new_a);
+    cout << k;
